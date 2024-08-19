@@ -5,3 +5,6 @@ vcenter_cluster_name: "Eco-Cluster"
 vcenter_datacenter: "Eco-Datacenter"
 vcenter_port: 443
 vcenter_validate_certs: false
+vcenter_hostname: "{{ hostname }}"
+vcenter_username: "{{ username }}"
+vcenter_password: "{{ password }}"

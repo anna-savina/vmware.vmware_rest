@@ -1,6 +1,10 @@
 ---
 - name: Get the current time
   vmware.vmware_rest.appliance_system_time_info:
+    vcenter_validate_certs: false
+    vcenter_hostname: "{{ hostname }}"
+    vcenter_username: "{{ username }}"
+    vcenter_password: "{{ password }}"
   register: result
 
 - ansible.builtin.debug: var=result

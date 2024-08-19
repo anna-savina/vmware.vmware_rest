@@ -1,12 +1,22 @@
 ---
 - name: Get the VCSA version
   vmware.vmware_rest.appliance_system_version_info:
+  vars:
+    vcenter_validate_certs: false
+    vcenter_hostname: "{{ hostname }}"
+    vcenter_username: "{{ username }}"
+    vcenter_password: "{{ password }}"
   register: result
 
 - ansible.builtin.debug: var=result
 
 - name: Check if the system is up to date
   vmware.vmware_rest.appliance_update_info:
+    vars:
+    vcenter_validate_certs: false
+    vcenter_hostname: "{{ hostname }}"
+    vcenter_username: "{{ username }}"
+    vcenter_password: "{{ password }}"
   register: result
 
 - ansible.builtin.debug: var=result
